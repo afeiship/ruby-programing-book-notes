@@ -38,3 +38,21 @@ class MyClass2
     # MyClass2 中独有的方法
 end
 ```
+
+## 模块的方法
+> 和类一样，我们也可以在 module 上下文中定义方法。
+```conf
+然而，如果仅仅定义了方法，虽然在模块内部与包含此模块的上文中都可以直接调用，但却不能以“模块名 . 方法名”的形式调用。如果希望把方法作为模块函 数公开给外部使用，就需要用到  module_function 方法。module_function 的参数是表示方法名的符号。
+```
+
+
+```rb
+module HelloWorld
+    def hello(name)
+        puts "hello #{name}"
+    end
+
+    # 指定hello 方法为模块函数
+    module_function :hello
+end
+```
